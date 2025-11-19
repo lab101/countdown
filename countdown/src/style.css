@@ -31,15 +31,26 @@ body {
 
 
 #app {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+  perspective: 480px;
 }
 
 
 #time {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: 10rem;
+  font-size: 8rem;
   font-weight: 700;
+  display: flex;
+  justify-content: center;
+}
+.dot-separator {
+  display: inline-block;
+  width: 4rem;
+}
+
+.time-segment {
+  display: inline-block;
+  width: 8rem;
+  /* border: 1px solid rgba(255, 255, 255, 0.2); */
 }

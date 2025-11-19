@@ -8,7 +8,25 @@
   </head>
   <body>
     <div id="app">
-      <div id="time"></div>
+      <div id="time">       
+        <div id="hours" class="time-segment"></div>
+        <div class="dot-separator">:</div>
+        <div id="minutes" class="time-segment"></div>
+        <div class="dot-separator">:</div>
+        <div id="seconds" class="time-segment"></div>
+      </div>  
+      <div id="help" style="display: none;position: relative; ">
+        <h2>Controls</h2>
+        <ul>
+          <li><strong>Arrow Keys</strong>: Move the clock around</li>
+          <li><strong>y</strong> / <strong>h</strong>: Zoom in / out</li>
+          <li><strong>u</strong>: Rotate clockwise</li>
+          <li><strong>j</strong>: Rotate counter-clockwise</li>
+          <li><strong>i</strong>: Increase perspective</li>
+          <li><strong>k</strong>: Decrease perspective</li>
+          <li><strong>c</strong>: Clear saved position and reset</li>
+          <li><strong>h</strong>: Toggle this help menu</li>
+        </ul>
     </div>
     <script type="module" src="/src/main.js"></script>
   </body>
