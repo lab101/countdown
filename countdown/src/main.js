@@ -1,6 +1,6 @@
 import './style.css'
 
-let targetTime = Date.parse('2025-11-19T19:00:00'); // Set your target date and time here
+let targetTime = Date.parse('2025-11-20T19:00:00'); // Set your target date and time here
 const MOVE_STEP = 10;
 const SCALE_STEP = 5;
 let posX = 0;
@@ -133,7 +133,7 @@ document.addEventListener('keydown', (event) => {
       changePerspective(20);
       break;
 
-    case 'h':
+    case ' ':
       toggleHelp();
       break;
 
@@ -157,8 +157,17 @@ document.addEventListener('keydown', (event) => {
 
 
 setInterval(() => {
-  const timeElement = document.getElementById('time');
 
+  setCurrentTime();
+
+}, 1000);
+
+
+window.onload = () => {
+  loadState();
+};
+
+function setCurrentTime() {
   let hours = 0;
   let minutes = 20;
   let seconds = 0;
@@ -176,11 +185,10 @@ setInterval(() => {
   seconds = Math.floor((timeDifference / 1000) % 60);
 
   // Format time as HH:MM:SS
-  const formattedTime = 
-    String(hours).padStart(2, '0') + ':' + 
-    String(minutes).padStart(2, '0') + ':' + 
+  const formattedTime = String(hours).padStart(2, '0') + ':' +
+    String(minutes).padStart(2, '0') + ':' +
     String(seconds).padStart(2, '0');
-  
+
 
   let hoursElement = document.getElementById('hours');
   let minutesElement = document.getElementById('minutes');
@@ -189,15 +197,8 @@ setInterval(() => {
   hoursElement.textContent = String(hours).padStart(2, '0');
   minutesElement.textContent = String(minutes).padStart(2, '0');
   secondsElement.textContent = String(seconds).padStart(2, '0');
-
-  // update the display
-  //timeElement.textContent = formattedTime;
-
-  
-
-}, 1000);
+}
 
 
-window.onload = () => {
-  loadState();
-};
+
+setCurrentTime();
